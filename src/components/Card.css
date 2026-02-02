@@ -1,0 +1,130 @@
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 320px;
+    height: 400px;
+    /* Fixed height for consistency */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.level-badge {
+    background: #e0e7ff;
+    color: #4f46e5;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.favorite-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    padding: 0;
+    color: #d1d5db;
+    box-shadow: none;
+}
+
+.favorite-btn.active {
+    color: #fbbf24;
+}
+
+.hanja-display {
+    font-size: 6rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    color: #1f2937;
+}
+
+.card-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.card-details.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sound-meaning {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.sound {
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.meaning {
+    color: #6b7280;
+}
+
+.examples {
+    width: 100%;
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.example-item {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.example-item:last-child {
+    margin-bottom: 0;
+}
+
+.hanja-sub {
+    color: #9ca3af;
+}
+
+.tap-hint {
+    margin-top: auto;
+    color: #9ca3af;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}

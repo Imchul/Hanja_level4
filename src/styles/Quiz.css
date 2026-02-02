@@ -1,0 +1,95 @@
+.quiz-setup-container {
+    text-align: left;
+}
+
+.setup-section {
+    margin-bottom: 2rem;
+}
+
+.setup-section h2 {
+    font-size: 1.2rem;
+    color: #4b5563;
+    margin-bottom: 1rem;
+}
+
+.mode-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.mode-card {
+    background: white;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: left;
+    transition: all 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mode-card:hover {
+    transform: translateY(-2px);
+}
+
+.mode-card.selected {
+    border-color: var(--primary-color);
+    background: #eff6ff;
+}
+
+.mode-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    color: #1f2937;
+}
+
+.mode-card p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+.count-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.count-options button {
+    background: white;
+    color: #1f2937;
+    border: 1px solid #d1d5db;
+    padding: 8px 16px;
+}
+
+.count-options button.selected {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.count-options input {
+    padding: 8px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    width: 80px;
+}
+
+.count-options input.selected-input {
+    border-color: var(--primary-color);
+    outline: 2px solid #a5b4fc;
+}
+
+.start-btn {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.3rem;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    margin-top: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}

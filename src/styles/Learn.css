@@ -1,0 +1,66 @@
+.learn-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.learn-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.back-btn {
+    background: none;
+    font-size: 1.5rem;
+    padding: 5px;
+    color: #6b7280;
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+}
+
+.toggle-label {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.card-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.nav-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    margin-top: auto;
+}
+
+.nav-controls button {
+    background: var(--primary-color);
+    color: white;
+    width: 100px;
+    border-radius: 50px;
+}
+
+.nav-controls button:disabled {
+    background: #d1d5db;
+    cursor: not-allowed;
+}
+
+.progress {
+    font-weight: bold;
+    color: #6b7280;
+}
