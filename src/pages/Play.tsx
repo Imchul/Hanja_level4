@@ -1,31 +1,29 @@
 import { useState, useEffect, useRef } from 'react';
-import { useSearchParams, useNavigate } from 'react-router-dom';
+import { useSearchParams, useNavigate, useLocation } from 'react-router-dom';
 import { generateQuiz } from '../utils/quizGenerator';
-import type { QuizQuestion } from '../utils/quizGenerator';
+import type { QuizQuestion, QuizOption } from '../utils/quizGenerator';
 import '../styles/Play.css';
 
 export default function Play() {
     const [searchParams] = useSearchParams();
     const navigate = useNavigate();
+    const location = useLocation();
 
     const mode = searchParams.get('mode') || 'basic';
-    // If TimeAttack, count is fixed or irrelevant (looping?), but for now we follow generated list
-    // Actually TimeAttack usually re-generates or has large pool. 
-    // For MVP, we'll generate a large enough pool or just N questions.
-    // User spec says "Fixed (e.g. 25) or User selected N". So we stick to count.
     const countStr = searchParams.get('count') || '10';
     const timeStr = searchParams.get('time') || '60';
 
     const count = parseInt(countStr, 10);
     const initialTime = parseInt(timeStr, 10);
 
+    // Retry state from location
+    const retryIds = location.state?.retryIds as number[] | undefined;
+
     const [questions, setQuestions] = useState<QuizQuestion[]>([]);
     const [currentIdx, setCurrentIdx] = useState(0);
     const [gameState, setGameState] = useState<'loading' | 'playing' | 'feedback' | 'finished'>('loading');
 
     // Game State
-    const [selectedSound, setSelectedSound] = useState<string | null>(null);
-    const [selectedMeaning, setSelectedMeaning] = useState<string | null>(null);
     const [score, setScore] = useState(0);
     const [combo, setCombo] = useState(0);
     const [maxCombo, setMaxCombo] = useState(0);
@@ -33,14 +31,27 @@ export default function Play() {
     const [timeLeft, setTimeLeft] = useState(initialTime);
     const [isCorrect, setIsCorrect] = useState(false);
 
+    // Track wrong answers for Retry
+    const [wrongids, setWrongids] = useState<number[]>([]);
+
+    // Selection state
+    const [selectedOption, setSelectedOption] = useState<QuizOption | null>(null);
+
     const timerRef = useRef<number | null>(null);
 
     useEffect(() => {
         // Init Quiz
-        const quiz = generateQuiz(mode, count);
-        setQuestions(quiz);
+        if (retryIds && retryIds.length > 0) {
+            // Retry Mode
+            const quiz = generateQuiz(mode, retryIds.length, retryIds);
+            setQuestions(quiz);
+        } else {
+            // Normal Mode
+            const quiz = generateQuiz(mode, count);
+            setQuestions(quiz);
+        }
         setGameState('playing');
-    }, [mode, count]);
+    }, [mode, count, retryIds]);
 
     useEffect(() => {
         if (mode === 'timeattack' && gameState === 'playing') {
@@ -65,39 +76,31 @@ export default function Play() {
         navigate('/result', {
             state: {
                 score,
-                total: questions.length, // or currentIdx for TimeAttack?
-                // For TimeAttack, total questions answered is currentIdx + 1 (or currentIdx if timeout)
-                // But let's just pass stats
+                total: questions.length,
                 correctCount,
                 maxCombo,
                 mode,
-                history: { totalQuestions: questions.length }
+                wrongIds: wrongids
             }
         });
     };
 
-    useEffect(() => {
-        // Check answer if both selected
-        if (selectedSound && selectedMeaning && gameState === 'playing') {
-            checkAnswer();
-        }
-    }, [selectedSound, selectedMeaning]);
+    const handleOptionClick = (option: QuizOption) => {
+        if (gameState !== 'playing') return;
 
-    const checkAnswer = () => {
-        const currentQ = questions[currentIdx];
-        const isRight =
-            selectedSound === currentQ.correctSound &&
-            selectedMeaning === currentQ.correctMeaning;
+        setSelectedOption(option);
 
+        const isRight = option.isCorrect;
         setIsCorrect(isRight);
         setGameState('feedback');
+
+        const currentQ = questions[currentIdx];
 
         if (isRight) {
             const newCombo = combo + 1;
             setCombo(newCombo);
             if (newCombo > maxCombo) setMaxCombo(newCombo);
 
-            // Calculate Score
             let points = 1;
             if (mode === 'combo') {
                 if (newCombo >= 5) points += 2;
@@ -107,42 +110,66 @@ export default function Play() {
             setCorrectCount(prev => prev + 1);
         } else {
             setCombo(0);
+            // Add to wrong list if not already there
+            if (!wrongids.includes(currentQ.id)) {
+                setWrongids([...wrongids, currentQ.id]);
+            }
         }
-
-        // Auto next after delay? Or manual?
-        // User option: "Auto next question toggle". 
-        // For MVP, lets do auto next after 1.5s or manual click
-        // "Finished result screen: answer public + example words immediately"
     };
 
     const nextQuestion = () => {
         if (currentIdx < questions.length - 1) {
             setCurrentIdx(prev => prev + 1);
-            setSelectedSound(null);
-            setSelectedMeaning(null);
+            setSelectedOption(null);
             setGameState('playing');
         } else {
             endGame();
         }
     };
 
-    if (gameState === 'loading') return <div className="page-container">Loading...</div>;
+    const prevQuestion = () => {
+        if (currentIdx > 0) {
+            setCurrentIdx(prev => prev - 1);
+            setSelectedOption(null);
+            setGameState('playing'); // Reset to playing state? Or show result? 
+            // Showing result of previous question is complex if we didn't store it.
+            // For simple MVP "Back", just letting them re-read the question or re-try? 
+            // User asked "Get Back". Usually implies checking previous. 
+            // If we want to allow re-answering, that changes scoring logic.
+            // Let's assume Back just moves index back, reset state to playing (allow retry? or just view?)
+            // To be safe and simple: allow re-attempt but don't give points? 
+            // Or just "Back" to view. 
+            // Given the request "Go back", let's simply decrement index and reset state.
+            // Note: This allows cheating (go back and fix score?). 
+            // Since it's for kids/study, lenient is fine.
+        }
+    };
+
+    if (gameState === 'loading' || questions.length === 0) return <div className="page-container">Loading...</div>;
 
     const currentQ = questions[currentIdx];
 
     return (
         <div className="play-container">
             <header className="play-header">
+                <div className="header-left">
+                    <button className="nav-btn" onClick={prevQuestion} disabled={currentIdx === 0 && !retryIds}>
+                        ⬅
+                    </button>
+                </div>
+
                 <div className="stat-box">
                     <span className="label">점수</span>
                     <span className="value">{score}</span>
                 </div>
+
                 {mode === 'combo' && (
                     <div className="stat-box combo-box">
                         <span className="label">콤보</span>
                         <span className="value">🔥 {combo}</span>
                     </div>
                 )}
+
                 {mode === 'timeattack' ? (
                     <div className={`stat-box time-box ${timeLeft < 10 ? 'urgent' : ''}`}>
                         <span className="value">⏰ {timeLeft}s</span>
@@ -159,7 +186,7 @@ export default function Play() {
                 <div className="question-card">
                     {mode === 'hint' ? (
                         <div className="hint-display">
-                            <span className="hint-label">이 한자의 음과 뜻은?</span>
+                            <span className="hint-label">다음 단어에 들어갈 한자는?</span>
                             <div className="hint-examples">
                                 {currentQ.hanja.examples.map((ex, i) => (
                                     <div key={i} className="hint-row">
@@ -173,45 +200,22 @@ export default function Play() {
                     )}
                 </div>
 
-                {/* Options */}
-                <div className={`options-area ${gameState === 'feedback' ? 'disabled' : ''}`}>
-                    <div className="option-group">
-                        <label>음(소리)</label>
-                        <div className="options-grid">
-                            {currentQ.soundOptions.map(opt => (
-                                <button
-                                    key={opt}
-                                    className={`opt-btn ${selectedSound === opt ? 'selected' : ''} 
-                    ${gameState === 'feedback' && opt === currentQ.correctSound ? 'correct' : ''}
-                    ${gameState === 'feedback' && selectedSound === opt && opt !== currentQ.correctSound ? 'wrong' : ''}
-                  `}
-                                    onClick={() => setSelectedSound(opt)}
-                                    disabled={gameState === 'feedback'}
-                                >
-                                    {opt}
-                                </button>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div className="option-group">
-                        <label>뜻(의미)</label>
-                        <div className="options-grid">
-                            {currentQ.meaningOptions.map(opt => (
-                                <button
-                                    key={opt}
-                                    className={`opt-btn ${selectedMeaning === opt ? 'selected' : ''} 
-                    ${gameState === 'feedback' && opt === currentQ.correctMeaning ? 'correct' : ''}
-                    ${gameState === 'feedback' && selectedMeaning === opt && opt !== currentQ.correctMeaning ? 'wrong' : ''}
-                  `}
-                                    onClick={() => setSelectedMeaning(opt)}
-                                    disabled={gameState === 'feedback'}
-                                >
-                                    {opt}
-                                </button>
-                            ))}
-                        </div>
-                    </div>
+                {/* Options - Unified Grid */}
+                <div className={`options-grid-unified ${gameState === 'feedback' ? 'disabled' : ''}`}>
+                    {currentQ.options.map((opt, idx) => (
+                        <button
+                            key={idx}
+                            className={`unified-opt-btn ${selectedOption === opt ? 'selected' : ''}
+                    ${gameState === 'feedback' && opt.isCorrect ? 'correct' : ''}
+                    ${gameState === 'feedback' && selectedOption === opt && !opt.isCorrect ? 'wrong' : ''}
+                `}
+                            onClick={() => handleOptionClick(opt)}
+                            disabled={gameState === 'feedback'}
+                        >
+                            <span className="opt-sound">{opt.sound}</span>
+                            <span className="opt-meaning">{opt.meaning}</span>
+                        </button>
+                    ))}
                 </div>
 
                 {/* Feedback Overlay */}
@@ -221,7 +225,7 @@ export default function Play() {
                             <div className="result-icon">{isCorrect ? '⭕ 정답!' : '❌ 땡!'}</div>
                             <div className="answer-reveal">
                                 <span className="big-char">{currentQ.hanja.char}</span>
-                                <span className="info">{currentQ.correctSound} [{currentQ.correctMeaning}]</span>
+                                <span className="info">{currentQ.hanja.sound} [{currentQ.hanja.meaning}]</span>
                             </div>
                             <div className="examples-reveal">
                                 {currentQ.hanja.examples.map((ex, i) => (

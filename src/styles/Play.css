@@ -11,7 +11,29 @@
 .play-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.header-left {
+    flex: 1;
+}
+
+.nav-btn {
+    background: white;
+    border: 1px solid #e5e7eb;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    color: #4b5563;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.nav-btn:disabled {
+    background: #f3f4f6;
+    color: #d1d5db;
+    cursor: not-allowed;
+    box-shadow: none;
 }
 
 .stat-box {
@@ -24,6 +46,7 @@
     flex-direction: column;
     align-items: center;
     font-size: 0.9rem;
+    margin-left: 10px;
 }
 
 .stat-box .value {
@@ -51,6 +74,11 @@
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.question-card:hover {
+    transform: translateY(-2px);
 }
 
 .hanja-big {
@@ -78,51 +106,56 @@
     color: #cbd5e1;
 }
 
-.options-area {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.option-group label {
-    display: block;
-    font-size: 0.9rem;
-    color: #6b7280;
-    margin-bottom: 0.5rem;
-    text-align: left;
-    margin-left: 5px;
-}
-
-.options-grid {
+.options-grid-unified {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.8rem;
+    gap: 1rem;
 }
 
-.opt-btn {
+.unified-opt-btn {
     background: white;
     border: 2px solid #e5e7eb;
-    padding: 1rem;
-    border-radius: 12px;
-    font-size: 1.1rem;
-    transition: all 0.2s;
-    color: #374151;
+    padding: 1.5rem 1rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
 }
 
-.opt-btn.selected {
-    border-color: var(--primary-color);
-    background: #e0e7ff;
-    color: var(--primary-color);
+.unified-opt-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    border-color: #a5b4fc;
+}
+
+.unified-opt-btn:active {
+    transform: scale(0.98);
+}
+
+.opt-sound {
+    font-size: 1.8rem;
     font-weight: bold;
+    color: #1f2937;
 }
 
-.opt-btn.correct {
+.opt-meaning {
+    font-size: 1rem;
+    color: #6b7280;
+}
+
+.unified-opt-btn.correct {
     background: #d1fae5 !important;
     border-color: #10b981 !important;
     color: #065f46 !important;
 }
 
-.opt-btn.wrong {
+.unified-opt-btn.wrong {
     background: #fee2e2 !important;
     border-color: #ef4444 !important;
     color: #991b1b !important;
@@ -193,6 +226,8 @@
     background: #1f2937;
     color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    cursor: pointer;
 }
 
 @keyframes bounce {

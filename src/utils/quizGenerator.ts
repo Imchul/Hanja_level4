@@ -1,45 +1,72 @@
 import { hanjaList } from '../data/hanjaList';
 import type { Hanja } from '../data/hanjaList';
 
+export interface QuizOption {
+    sound: string;
+    meaning: string;
+    isCorrect: boolean;
+}
+
 export interface QuizQuestion {
     id: number;
     hanja: Hanja;
-    soundOptions: string[];
-    meaningOptions: string[];
-    correctSound: string;
-    correctMeaning: string;
-    type: 'basic' | 'hint'; // 'basic' covers Basic/Combo/Time, 'hint' is for Hint mode
+    // Unified options for Basic/Combo
+    options: QuizOption[];
+
+    // Keep separate for Hint mode if we want to keep that mechanic (Word -> Sound/Meaning separately?)
+    // User asked for "Unified Selection", assuming for Basic mode.
+    // But Hint mode was "Context -> Infer Sound/Meaning". 
+    // If we unify, it just becomes "Context -> Select Sound+Meaning". This is cleaner.
+    // Let's unify EVERYTHING for simplicity and "less clicks".
+
+    type: 'basic' | 'hint';
 }
 
 const SHUFFLE = <T>(array: T[]): T[] => {
     return [...array].sort(() => Math.random() - 0.5);
 };
 
-export const generateQuiz = (mode: string, count: number): QuizQuestion[] => {
-    const shuffledHanja = SHUFFLE(hanjaList).slice(0, count);
-    // If we don't have enough hanja for count, we might reuse or just take all.
-    // Current logic just takes what is available if count > valid list length.
+export const generateQuiz = (mode: string, count: number, specificIds?: number[]): QuizQuestion[] => {
+    // If specificIds provided (Retry), use those. Else random slice.
+    let targetHanjas: Hanja[] = [];
 
-    // Need pool for distractors
-    const allSounds = Array.from(new Set(hanjaList.map(h => h.sound)));
-    const allMeanings = Array.from(new Set(hanjaList.map(h => h.meaning)));
+    if (specificIds && specificIds.length > 0) {
+        targetHanjas = hanjaList.filter(h => specificIds.includes(h.id));
+        // Shuffle them so retry order is different? Or keep order? Shuffle is better.
+        targetHanjas = SHUFFLE(targetHanjas);
+    } else {
+        // Normal generation
+        targetHanjas = SHUFFLE(hanjaList).slice(0, count);
+    }
 
-    return shuffledHanja.map((target) => {
-        // Generate Sound Options
-        const otherSounds = SHUFFLE(allSounds.filter(s => s !== target.sound)).slice(0, 3);
-        const soundOptions = SHUFFLE([target.sound, ...otherSounds]);
+    // Pool for distractors
+    const allHanjas = hanjaList;
 
-        // Generate Meaning Options
-        const otherMeanings = SHUFFLE(allMeanings.filter(m => m !== target.meaning)).slice(0, 3);
-        const meaningOptions = SHUFFLE([target.meaning, ...otherMeanings]);
+    return targetHanjas.map((target) => {
+        // Generate Distractors (Wrong answers)
+        // We need 3 other Hanja that are NOT the target
+        const distractors = SHUFFLE(allHanjas.filter(h => h.id !== target.id)).slice(0, 3);
+
+        // Create Option objects
+        const correctOption: QuizOption = {
+            sound: target.sound,
+            meaning: target.meaning,
+            isCorrect: true
+        };
+
+        const wrongOptions: QuizOption[] = distractors.map(d => ({
+            sound: d.sound,
+            meaning: d.meaning,
+            isCorrect: false
+        }));
+
+        // Combine and Shuffle
+        const options = SHUFFLE([correctOption, ...wrongOptions]);
 
         return {
             id: target.id,
             hanja: target,
-            soundOptions,
-            meaningOptions,
-            correctSound: target.sound,
-            correctMeaning: target.meaning,
+            options,
             type: mode === 'hint' ? 'hint' : 'basic',
         };
     });
