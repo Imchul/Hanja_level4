@@ -1,0 +1,1814 @@
+[
+    {
+        "id": 201,
+        "char": "落",
+        "meaning": "떨어질",
+        "examples": [
+            {
+                "word": "낙엽",
+                "hanja": "落葉"
+            },
+            {
+                "word": "추락",
+                "hanja": "墜落"
+            },
+            {
+                "word": "탈락",
+                "hanja": "脫落"
+            }
+        ]
+    },
+    {
+        "id": 202,
+        "char": "樂",
+        "meaning": "즐거울",
+        "examples": [
+            {
+                "word": "오락",
+                "hanja": "娛樂"
+            },
+            {
+                "word": "쾌락",
+                "hanja": "快樂"
+            },
+            {
+                "word": "낙원",
+                "hanja": "樂園"
+            }
+        ]
+    },
+    {
+        "id": 203,
+        "char": "卵",
+        "meaning": "알",
+        "examples": [
+            {
+                "word": "계란",
+                "hanja": "鷄卵"
+            },
+            {
+                "word": "산란",
+                "hanja": "産卵"
+            },
+            {
+                "word": "난자",
+                "hanja": "卵子"
+            }
+        ]
+    },
+    {
+        "id": 204,
+        "char": "亂",
+        "meaning": "어지러울",
+        "examples": [
+            {
+                "word": "혼란",
+                "hanja": "混亂"
+            },
+            {
+                "word": "반란",
+                "hanja": "叛亂"
+            },
+            {
+                "word": "요란",
+                "hanja": "搖亂"
+            }
+        ]
+    },
+    {
+        "id": 205,
+        "char": "浪",
+        "meaning": "물결",
+        "examples": [
+            {
+                "word": "파랑",
+                "hanja": "波浪"
+            },
+            {
+                "word": "낭비",
+                "hanja": "浪費"
+            },
+            {
+                "word": "유랑",
+                "hanja": "流浪"
+            }
+        ]
+    },
+    {
+        "id": 206,
+        "char": "來",
+        "meaning": "올",
+        "examples": [
+            {
+                "word": "미래",
+                "hanja": "未來"
+            },
+            {
+                "word": "내일",
+                "hanja": "來日"
+            },
+            {
+                "word": "왕래",
+                "hanja": "往來"
+            }
+        ]
+    },
+    {
+        "id": 207,
+        "char": "冷",
+        "meaning": "찰",
+        "examples": [
+            {
+                "word": "냉장고",
+                "hanja": "冷藏庫"
+            },
+            {
+                "word": "냉동",
+                "hanja": "冷凍"
+            },
+            {
+                "word": "냉정",
+                "hanja": "冷靜"
+            }
+        ]
+    },
+    {
+        "id": 208,
+        "char": "涼",
+        "meaning": "서늘할",
+        "examples": [
+            {
+                "word": "청량",
+                "hanja": "淸凉"
+            },
+            {
+                "word": "납량",
+                "hanja": "納凉"
+            },
+            {
+                "word": "황량",
+                "hanja": "荒凉"
+            }
+        ]
+    },
+    {
+        "id": 209,
+        "char": "同",
+        "meaning": "한가지",
+        "examples": [
+            {
+                "word": "동창",
+                "hanja": "同窓"
+            },
+            {
+                "word": "공동",
+                "hanja": "共同"
+            },
+            {
+                "word": "동감",
+                "hanja": "同感"
+            }
+        ]
+    },
+    {
+        "id": 210,
+        "char": "登",
+        "meaning": "오를",
+        "examples": [
+            {
+                "word": "등산",
+                "hanja": "登山"
+            },
+            {
+                "word": "등교",
+                "hanja": "登校"
+            },
+            {
+                "word": "등장",
+                "hanja": "登場"
+            }
+        ]
+    },
+    {
+        "id": 211,
+        "char": "量",
+        "meaning": "헤아릴",
+        "examples": [
+            {
+                "word": "수량",
+                "hanja": "數量"
+            },
+            {
+                "word": "분량",
+                "hanja": "分量"
+            },
+            {
+                "word": "역량",
+                "hanja": "力量"
+            }
+        ]
+    },
+    {
+        "id": 212,
+        "char": "良",
+        "meaning": "어질",
+        "examples": [
+            {
+                "word": "양심",
+                "hanja": "良心"
+            },
+            {
+                "word": "양호",
+                "hanja": "良好"
+            },
+            {
+                "word": "개량",
+                "hanja": "改良"
+            }
+        ]
+    },
+    {
+        "id": 213,
+        "char": "兩",
+        "meaning": "두",
+        "examples": [
+            {
+                "word": "양측",
+                "hanja": "兩側"
+            },
+            {
+                "word": "양면",
+                "hanja": "兩面"
+            },
+            {
+                "word": "양립",
+                "hanja": "兩立"
+            }
+        ]
+    },
+    {
+        "id": 214,
+        "char": "旅",
+        "meaning": "나그네",
+        "examples": [
+            {
+                "word": "여행",
+                "hanja": "旅行"
+            },
+            {
+                "word": "여관",
+                "hanja": "旅館"
+            },
+            {
+                "word": "여권",
+                "hanja": "旅券"
+            }
+        ]
+    },
+    {
+        "id": 215,
+        "char": "歷",
+        "meaning": "지날",
+        "examples": [
+            {
+                "word": "역사",
+                "hanja": "歷史"
+            },
+            {
+                "word": "이력",
+                "hanja": "履歷"
+            },
+            {
+                "word": "경력",
+                "hanja": "經歷"
+            }
+        ]
+    },
+    {
+        "id": 216,
+        "char": "力",
+        "meaning": "힘",
+        "examples": [
+            {
+                "word": "노력",
+                "hanja": "努力"
+            },
+            {
+                "word": "능력",
+                "hanja": "能力"
+            },
+            {
+                "word": "협력",
+                "hanja": "協力"
+            }
+        ]
+    },
+    {
+        "id": 217,
+        "char": "聯",
+        "meaning": "잇닿을",
+        "examples": [
+            {
+                "word": "연합",
+                "hanja": "聯合"
+            },
+            {
+                "word": "관련",
+                "hanja": "關聯"
+            },
+            {
+                "word": "연맹",
+                "hanja": "聯盟"
+            }
+        ]
+    },
+    {
+        "id": 218,
+        "char": "連",
+        "meaning": "이을",
+        "examples": [
+            {
+                "word": "연결",
+                "hanja": "連結"
+            },
+            {
+                "word": "연속",
+                "hanja": "連續"
+            },
+            {
+                "word": "연락",
+                "hanja": "連絡"
+            }
+        ]
+    },
+    {
+        "id": 219,
+        "char": "練",
+        "meaning": "익힐",
+        "examples": [
+            {
+                "word": "연습",
+                "hanja": "練習"
+            },
+            {
+                "word": "세련",
+                "hanja": "洗練"
+            },
+            {
+                "word": "숙련",
+                "hanja": "熟練"
+            }
+        ]
+    },
+    {
+        "id": 220,
+        "char": "烈",
+        "meaning": "매울",
+        "examples": [
+            {
+                "word": "열렬",
+                "hanja": "熱烈"
+            },
+            {
+                "word": "치열",
+                "hanja": "熾烈"
+            },
+            {
+                "word": "강렬",
+                "hanja": "强烈"
+            }
+        ]
+    },
+    {
+        "id": 221,
+        "char": "列",
+        "meaning": "벌일",
+        "examples": [
+            {
+                "word": "줄",
+                "hanja": "列"
+            },
+            {
+                "word": "나열",
+                "hanja": "羅列"
+            },
+            {
+                "word": "행렬",
+                "hanja": "行列"
+            }
+        ]
+    },
+    {
+        "id": 222,
+        "char": "領",
+        "meaning": "거느릴",
+        "examples": [
+            {
+                "word": "대통령",
+                "hanja": "大統領"
+            },
+            {
+                "word": "영토",
+                "hanja": "領土"
+            },
+            {
+                "word": "점령",
+                "hanja": "占領"
+            }
+        ]
+    },
+    {
+        "id": 223,
+        "char": "令",
+        "meaning": "하여금",
+        "examples": [
+            {
+                "word": "명령",
+                "hanja": "命令"
+            },
+            {
+                "word": "법령",
+                "hanja": "法令"
+            },
+            {
+                "word": "지령",
+                "hanja": "指令"
+            }
+        ]
+    },
+    {
+        "id": 224,
+        "char": "禮",
+        "meaning": "예도",
+        "examples": [
+            {
+                "word": "예절",
+                "hanja": "禮節"
+            },
+            {
+                "word": "예의",
+                "hanja": "禮儀"
+            },
+            {
+                "word": "실례",
+                "hanja": "失禮"
+            }
+        ]
+    },
+    {
+        "id": 225,
+        "char": "例",
+        "meaning": "법식",
+        "examples": [
+            {
+                "word": "예시",
+                "hanja": "例示"
+            },
+            {
+                "word": "사례",
+                "hanja": "事例"
+            },
+            {
+                "word": "예외",
+                "hanja": "例外"
+            }
+        ]
+    },
+    {
+        "id": 226,
+        "char": "勞",
+        "meaning": "일할",
+        "examples": [
+            {
+                "word": "노동",
+                "hanja": "勞動"
+            },
+            {
+                "word": "근로",
+                "hanja": "勤勞"
+            },
+            {
+                "word": "피로",
+                "hanja": "疲勞"
+            }
+        ]
+    },
+    {
+        "id": 227,
+        "char": "路",
+        "meaning": "길",
+        "examples": [
+            {
+                "word": "도로",
+                "hanja": "道路"
+            },
+            {
+                "word": "진로",
+                "hanja": "進路"
+            },
+            {
+                "word": "통로",
+                "hanja": "通路"
+            }
+        ]
+    },
+    {
+        "id": 228,
+        "char": "老",
+        "meaning": "늙을",
+        "examples": [
+            {
+                "word": "노인",
+                "hanja": "老人"
+            },
+            {
+                "word": "노후",
+                "hanja": "老後"
+            },
+            {
+                "word": "경로",
+                "hanja": "敬老"
+            }
+        ]
+    },
+    {
+        "id": 229,
+        "char": "露",
+        "meaning": "이슬",
+        "examples": [
+            {
+                "word": "노출",
+                "hanja": "露出"
+            },
+            {
+                "word": "폭로",
+                "hanja": "暴露"
+            },
+            {
+                "word": "노숙",
+                "hanja": "露宿"
+            }
+        ]
+    },
+    {
+        "id": 230,
+        "char": "綠",
+        "meaning": "푸를",
+        "examples": [
+            {
+                "word": "초록",
+                "hanja": "草綠"
+            },
+            {
+                "word": "녹색",
+                "hanja": "綠色"
+            },
+            {
+                "word": "녹차",
+                "hanja": "綠茶"
+            }
+        ]
+    },
+    {
+        "id": 231,
+        "char": "論",
+        "meaning": "논할",
+        "examples": [
+            {
+                "word": "의논",
+                "hanja": "議論"
+            },
+            {
+                "word": "토론",
+                "hanja": "討論"
+            },
+            {
+                "word": "이론",
+                "hanja": "理論"
+            }
+        ]
+    },
+    {
+        "id": 232,
+        "char": "料",
+        "meaning": "헤아릴",
+        "examples": [
+            {
+                "word": "요금",
+                "hanja": "料金"
+            },
+            {
+                "word": "재료",
+                "hanja": "材料"
+            },
+            {
+                "word": "자료",
+                "hanja": "資料"
+            }
+        ]
+    },
+    {
+        "id": 233,
+        "char": "留",
+        "meaning": "머무를",
+        "examples": [
+            {
+                "word": "유학",
+                "hanja": "留學"
+            },
+            {
+                "word": "보류",
+                "hanja": "保留"
+            },
+            {
+                "word": "체류",
+                "hanja": "滯留"
+            }
+        ]
+    },
+    {
+        "id": 234,
+        "char": "流",
+        "meaning": "흐를",
+        "examples": [
+            {
+                "word": "교류",
+                "hanja": "交流"
+            },
+            {
+                "word": "유행",
+                "hanja": "流行"
+            },
+            {
+                "word": "일류",
+                "hanja": "一流"
+            }
+        ]
+    },
+    {
+        "id": 235,
+        "char": "柳",
+        "meaning": "버들",
+        "examples": [
+            {
+                "word": "유성",
+                "hanja": "柳城"
+            },
+            {
+                "word": "화류",
+                "hanja": "花柳"
+            }
+        ]
+    },
+    {
+        "id": 236,
+        "char": "陸",
+        "meaning": "뭍",
+        "examples": [
+            {
+                "word": "대륙",
+                "hanja": "大陸"
+            },
+            {
+                "word": "육지",
+                "hanja": "陸地"
+            },
+            {
+                "word": "상륙",
+                "hanja": "上陸"
+            }
+        ]
+    },
+    {
+        "id": 237,
+        "char": "六",
+        "meaning": "여섯",
+        "examples": [
+            {
+                "word": "육십",
+                "hanja": "六十"
+            },
+            {
+                "word": "오육월",
+                "hanja": "五六月"
+            }
+        ]
+    },
+    {
+        "id": 238,
+        "char": "倫",
+        "meaning": "인륜",
+        "examples": [
+            {
+                "word": "윤리",
+                "hanja": "倫理"
+            },
+            {
+                "word": "인륜",
+                "hanja": "人倫"
+            },
+            {
+                "word": "패륜",
+                "hanja": "悖倫"
+            }
+        ]
+    },
+    {
+        "id": 239,
+        "char": "律",
+        "meaning": "법",
+        "examples": [
+            {
+                "word": "법률",
+                "hanja": "法律"
+            },
+            {
+                "word": "규율",
+                "hanja": "規律"
+            },
+            {
+                "word": "자율",
+                "hanja": "自律"
+            }
+        ]
+    },
+    {
+        "id": 240,
+        "char": "率",
+        "meaning": "거느릴",
+        "examples": [
+            {
+                "word": "솔선",
+                "hanja": "率先"
+            },
+            {
+                "word": "인솔",
+                "hanja": "引率"
+            },
+            {
+                "word": "통솔",
+                "hanja": "統率"
+            }
+        ]
+    },
+    {
+        "id": 241,
+        "char": "理",
+        "meaning": "다스릴",
+        "examples": [
+            {
+                "word": "이해",
+                "hanja": "理解"
+            },
+            {
+                "word": "이유",
+                "hanja": "理由"
+            },
+            {
+                "word": "정리",
+                "hanja": "整理"
+            }
+        ]
+    },
+    {
+        "id": 242,
+        "char": "里",
+        "meaning": "마을",
+        "examples": [
+            {
+                "word": "이장",
+                "hanja": "里長"
+            },
+            {
+                "word": "천리",
+                "hanja": "千里"
+            },
+            {
+                "word": "향리",
+                "hanja": "鄕里"
+            }
+        ]
+    },
+    {
+        "id": 243,
+        "char": "利",
+        "meaning": "이로울",
+        "examples": [
+            {
+                "word": "편리",
+                "hanja": "便利"
+            },
+            {
+                "word": "승리",
+                "hanja": "勝利"
+            },
+            {
+                "word": "이익",
+                "hanja": "利益"
+            }
+        ]
+    },
+    {
+        "id": 244,
+        "char": "林",
+        "meaning": "수풀",
+        "examples": [
+            {
+                "word": "산림",
+                "hanja": "山林"
+            },
+            {
+                "word": "삼림",
+                "hanja": "森林"
+            },
+            {
+                "word": "임업",
+                "hanja": "林業"
+            }
+        ]
+    },
+    {
+        "id": 245,
+        "char": "臨",
+        "meaning": "임할",
+        "examples": [
+            {
+                "word": "임시",
+                "hanja": "臨時"
+            },
+            {
+                "word": "군림",
+                "hanja": "君臨"
+            },
+            {
+                "word": "임종",
+                "hanja": "臨終"
+            }
+        ]
+    },
+    {
+        "id": 246,
+        "char": "立",
+        "meaning": "설",
+        "examples": [
+            {
+                "word": "독립",
+                "hanja": "獨立"
+            },
+            {
+                "word": "설립",
+                "hanja": "設立"
+            },
+            {
+                "word": "입장",
+                "hanja": "立場"
+            }
+        ]
+    },
+    {
+        "id": 247,
+        "char": "馬",
+        "meaning": "말",
+        "examples": [
+            {
+                "word": "경마",
+                "hanja": "競馬"
+            },
+            {
+                "word": "마차",
+                "hanja": "馬車"
+            },
+            {
+                "word": "승마",
+                "hanja": "乘馬"
+            }
+        ]
+    },
+    {
+        "id": 248,
+        "char": "莫",
+        "meaning": "없을",
+        "examples": [
+            {
+                "word": "막대한",
+                "hanja": "莫大한"
+            },
+            {
+                "word": "막강",
+                "hanja": "莫强"
+            }
+        ]
+    },
+    {
+        "id": 249,
+        "char": "萬",
+        "meaning": "일만",
+        "examples": [
+            {
+                "word": "만세",
+                "hanja": "萬歲"
+            },
+            {
+                "word": "만물",
+                "hanja": "萬物"
+            },
+            {
+                "word": "수만",
+                "hanja": "數萬"
+            }
+        ]
+    },
+    {
+        "id": 250,
+        "char": "滿",
+        "meaning": "찰",
+        "examples": [
+            {
+                "word": "만족",
+                "hanja": "滿足"
+            },
+            {
+                "word": "불만",
+                "hanja": "不滿"
+            },
+            {
+                "word": "미만",
+                "hanja": "未滿"
+            }
+        ]
+    },
+    {
+        "id": 251,
+        "char": "末",
+        "meaning": "끝",
+        "examples": [
+            {
+                "word": "연말",
+                "hanja": "年末"
+            },
+            {
+                "word": "주말",
+                "hanja": "週末"
+            },
+            {
+                "word": "결말",
+                "hanja": "結末"
+            }
+        ]
+    },
+    {
+        "id": 252,
+        "char": "亡",
+        "meaning": "망할",
+        "examples": [
+            {
+                "word": "사망",
+                "hanja": "死亡"
+            },
+            {
+                "word": "망명",
+                "hanja": "亡命"
+            },
+            {
+                "word": "멸망",
+                "hanja": "滅亡"
+            }
+        ]
+    },
+    {
+        "id": 253,
+        "char": "忙",
+        "meaning": "바쁠",
+        "examples": [
+            {
+                "word": "다망",
+                "hanja": "多忙"
+            },
+            {
+                "word": "공사다망",
+                "hanja": "公私多忙"
+            }
+        ]
+    },
+    {
+        "id": 254,
+        "char": "忘",
+        "meaning": "잊을",
+        "examples": [
+            {
+                "word": "망각",
+                "hanja": "忘却"
+            },
+            {
+                "word": "건망증",
+                "hanja": "健忘症"
+            }
+        ]
+    },
+    {
+        "id": 255,
+        "char": "望",
+        "meaning": "바랄",
+        "examples": [
+            {
+                "word": "희망",
+                "hanja": "希望"
+            },
+            {
+                "word": "소망",
+                "hanja": "所望"
+            },
+            {
+                "word": "절망",
+                "hanja": "絶望"
+            }
+        ]
+    },
+    {
+        "id": 256,
+        "char": "妹",
+        "meaning": "누이",
+        "examples": [
+            {
+                "word": "자매",
+                "hanja": "姉妹"
+            },
+            {
+                "word": "남매",
+                "hanja": "男妹"
+            }
+        ]
+    },
+    {
+        "id": 257,
+        "char": "每",
+        "meaning": "매양",
+        "examples": [
+            {
+                "word": "매일",
+                "hanja": "每日"
+            },
+            {
+                "word": "매주",
+                "hanja": "每周"
+            },
+            {
+                "word": "매년",
+                "hanja": "每年"
+            }
+        ]
+    },
+    {
+        "id": 258,
+        "char": "買",
+        "meaning": "살",
+        "examples": [
+            {
+                "word": "매매",
+                "hanja": "買賣"
+            },
+            {
+                "word": "구매",
+                "hanja": "購買"
+            },
+            {
+                "word": "매수",
+                "hanja": "買收"
+            }
+        ]
+    },
+    {
+        "id": 259,
+        "char": "賣",
+        "meaning": "팔",
+        "examples": [
+            {
+                "word": "매매",
+                "hanja": "賣買"
+            },
+            {
+                "word": "매점",
+                "hanja": "賣店"
+            },
+            {
+                "word": "판매",
+                "hanja": "販賣"
+            }
+        ]
+    },
+    {
+        "id": 260,
+        "char": "麥",
+        "meaning": "보리",
+        "examples": [
+            {
+                "word": "맥주",
+                "hanja": "麥酒"
+            },
+            {
+                "word": "보리",
+                "hanja": "麥"
+            }
+        ]
+    },
+    {
+        "id": 261,
+        "char": "盟",
+        "meaning": "맹세",
+        "examples": [
+            {
+                "word": "동맹",
+                "hanja": "同盟"
+            },
+            {
+                "word": "연맹",
+                "hanja": "聯盟"
+            },
+            {
+                "word": "가맹",
+                "hanja": "加盟"
+            }
+        ]
+    },
+    {
+        "id": 262,
+        "char": "眠",
+        "meaning": "잠잘",
+        "examples": [
+            {
+                "word": "수면",
+                "hanja": "睡眠"
+            },
+            {
+                "word": "불면",
+                "hanja": "不眠"
+            },
+            {
+                "word": "동면",
+                "hanja": "冬眠"
+            }
+        ]
+    },
+    {
+        "id": 263,
+        "char": "面",
+        "meaning": "낯",
+        "examples": [
+            {
+                "word": "얼굴",
+                "hanja": "面"
+            },
+            {
+                "word": "화면",
+                "hanja": "畫面"
+            },
+            {
+                "word": "표면",
+                "hanja": "表面"
+            }
+        ]
+    },
+    {
+        "id": 264,
+        "char": "免",
+        "meaning": "면할",
+        "examples": [
+            {
+                "word": "면제",
+                "hanja": "免除"
+            },
+            {
+                "word": "면허",
+                "hanja": "免許"
+            },
+            {
+                "word": "모면",
+                "hanja": "謨免"
+            }
+        ]
+    },
+    {
+        "id": 265,
+        "char": "勉",
+        "meaning": "힘쓸",
+        "examples": [
+            {
+                "word": "공부",
+                "hanja": "工夫"
+            }
+        ]
+    },
+    {
+        "id": 266,
+        "char": "明",
+        "meaning": "밝을",
+        "examples": [
+            {
+                "word": "설명",
+                "hanja": "說明"
+            },
+            {
+                "word": "투명",
+                "hanja": "透明"
+            },
+            {
+                "word": "조명",
+                "hanja": "照明"
+            }
+        ]
+    },
+    {
+        "id": 267,
+        "char": "鳴",
+        "meaning": "울",
+        "examples": [
+            {
+                "word": "비명",
+                "hanja": "悲鳴"
+            },
+            {
+                "word": "공명",
+                "hanja": "共鳴"
+            }
+        ]
+    },
+    {
+        "id": 268,
+        "char": "名",
+        "meaning": "이름",
+        "examples": [
+            {
+                "word": "이름",
+                "hanja": "名"
+            },
+            {
+                "word": "유명",
+                "hanja": "有名"
+            },
+            {
+                "word": "서명",
+                "hanja": "署名"
+            }
+        ]
+    },
+    {
+        "id": 269,
+        "char": "命",
+        "meaning": "목숨",
+        "examples": [
+            {
+                "word": "생명",
+                "hanja": "生命"
+            },
+            {
+                "word": "운명",
+                "hanja": "運命"
+            },
+            {
+                "word": "명령",
+                "hanja": "命令"
+            }
+        ]
+    },
+    {
+        "id": 270,
+        "char": "毛",
+        "meaning": "털",
+        "examples": [
+            {
+                "word": "양모",
+                "hanja": "羊毛"
+            },
+            {
+                "word": "모피",
+                "hanja": "毛皮"
+            },
+            {
+                "word": "불모",
+                "hanja": "不毛"
+            }
+        ]
+    },
+    {
+        "id": 271,
+        "char": "母",
+        "meaning": "어머니",
+        "examples": [
+            {
+                "word": "부모",
+                "hanja": "父母"
+            },
+            {
+                "word": "고모",
+                "hanja": "姑母"
+            },
+            {
+                "word": "모국",
+                "hanja": "母國"
+            }
+        ]
+    },
+    {
+        "id": 272,
+        "char": "暮",
+        "meaning": "저물",
+        "examples": [
+            {
+                "word": "조삼모사",
+                "hanja": "朝三暮四"
+            },
+            {
+                "word": "세모",
+                "hanja": "歲暮"
+            }
+        ]
+    },
+    {
+        "id": 273,
+        "char": "木",
+        "meaning": "나무",
+        "examples": [
+            {
+                "word": "목수",
+                "hanja": "木手"
+            },
+            {
+                "word": "목재",
+                "hanja": "木材"
+            },
+            {
+                "word": "토목",
+                "hanja": "土木"
+            }
+        ]
+    },
+    {
+        "id": 274,
+        "char": "目",
+        "meaning": "눈",
+        "examples": [
+            {
+                "word": "목적",
+                "hanja": "目的"
+            },
+            {
+                "word": "과목",
+                "hanja": "科目"
+            },
+            {
+                "word": "제목",
+                "hanja": "題目"
+            }
+        ]
+    },
+    {
+        "id": 275,
+        "char": "夢",
+        "meaning": "꿈",
+        "examples": [
+            {
+                "word": "꿈",
+                "hanja": "夢"
+            },
+            {
+                "word": "해몽",
+                "hanja": "解夢"
+            },
+            {
+                "word": "악몽",
+                "hanja": "惡夢"
+            }
+        ]
+    },
+    {
+        "id": 276,
+        "char": "妙",
+        "meaning": "묘할",
+        "examples": [
+            {
+                "word": "기묘",
+                "hanja": "奇妙"
+            },
+            {
+                "word": "절묘",
+                "hanja": "絶妙"
+            },
+            {
+                "word": "오묘",
+                "hanja": "奧妙"
+            }
+        ]
+    },
+    {
+        "id": 277,
+        "char": "墓",
+        "meaning": "무덤",
+        "examples": [
+            {
+                "word": "성묘",
+                "hanja": "省墓"
+            },
+            {
+                "word": "묘지",
+                "hanja": "墓地"
+            }
+        ]
+    },
+    {
+        "id": 278,
+        "char": "卯",
+        "meaning": "토끼",
+        "examples": [
+            {
+                "word": "묘시",
+                "hanja": "卯時"
+            }
+        ]
+    },
+    {
+        "id": 279,
+        "char": "無",
+        "meaning": "없을",
+        "examples": [
+            {
+                "word": "무시",
+                "hanja": "無視"
+            },
+            {
+                "word": "유무",
+                "hanja": "有無"
+            },
+            {
+                "word": "무료",
+                "hanja": "無料"
+            }
+        ]
+    },
+    {
+        "id": 280,
+        "char": "武",
+        "meaning": "굳셀",
+        "examples": [
+            {
+                "word": "무기",
+                "hanja": "武器"
+            },
+            {
+                "word": "무력",
+                "hanja": "武力"
+            },
+            {
+                "word": "무사",
+                "hanja": "武士"
+            }
+        ]
+    },
+    {
+        "id": 281,
+        "char": "茂",
+        "meaning": "무성할",
+        "examples": [
+            {
+                "word": "무성",
+                "hanja": "茂盛"
+            }
+        ]
+    },
+    {
+        "id": 282,
+        "char": "貿",
+        "meaning": "무역할",
+        "examples": [
+            {
+                "word": "무역",
+                "hanja": "貿易"
+            }
+        ]
+    },
+    {
+        "id": 283,
+        "char": "戊",
+        "meaning": "다섯째천간",
+        "examples": [
+            {
+                "word": "무진",
+                "hanja": "戊辰"
+            },
+            {
+                "word": "무술",
+                "hanja": "戊戌"
+            }
+        ]
+    },
+    {
+        "id": 284,
+        "char": "舞",
+        "meaning": "춤출",
+        "examples": [
+            {
+                "word": "무대",
+                "hanja": "舞臺"
+            },
+            {
+                "word": "무용",
+                "hanja": "舞踊"
+            },
+            {
+                "word": "고무",
+                "hanja": "鼓舞"
+            }
+        ]
+    },
+    {
+        "id": 285,
+        "char": "務",
+        "meaning": "힘쓸",
+        "examples": [
+            {
+                "word": "의무",
+                "hanja": "義務"
+            },
+            {
+                "word": "업무",
+                "hanja": "業務"
+            },
+            {
+                "word": "사무",
+                "hanja": "事務"
+            }
+        ]
+    },
+    {
+        "id": 286,
+        "char": "文",
+        "meaning": "글월",
+        "examples": [
+            {
+                "word": "문화",
+                "hanja": "文化"
+            },
+            {
+                "word": "작문",
+                "hanja": "作文"
+            },
+            {
+                "word": "문학",
+                "hanja": "文學"
+            }
+        ]
+    },
+    {
+        "id": 287,
+        "char": "門",
+        "meaning": "문",
+        "examples": [
+            {
+                "word": "창문",
+                "hanja": "窓門"
+            },
+            {
+                "word": "정문",
+                "hanja": "正門"
+            },
+            {
+                "word": "부문",
+                "hanja": "部門"
+            }
+        ]
+    },
+    {
+        "id": 288,
+        "char": "問",
+        "meaning": "물을",
+        "examples": [
+            {
+                "word": "문제",
+                "hanja": "問題"
+            },
+            {
+                "word": "질문",
+                "hanja": "質問"
+            },
+            {
+                "word": "방문",
+                "hanja": "訪問"
+            }
+        ]
+    },
+    {
+        "id": 289,
+        "char": "聞",
+        "meaning": "들을",
+        "examples": [
+            {
+                "word": "신문",
+                "hanja": "新聞"
+            },
+            {
+                "word": "소문",
+                "hanja": "所聞"
+            },
+            {
+                "word": "견문",
+                "hanja": "見聞"
+            }
+        ]
+    },
+    {
+        "id": 290,
+        "char": "物",
+        "meaning": "만물/물건",
+        "examples": [
+            {
+                "word": "동물",
+                "hanja": "動物"
+            },
+            {
+                "word": "물건",
+                "hanja": "物件"
+            },
+            {
+                "word": "사물",
+                "hanja": "事物"
+            }
+        ]
+    },
+    {
+        "id": 291,
+        "char": "勿",
+        "meaning": "말",
+        "examples": [
+            {
+                "word": "물론",
+                "hanja": "勿論"
+            }
+        ]
+    },
+    {
+        "id": 292,
+        "char": "反",
+        "meaning": "돌이킬",
+        "examples": [
+            {
+                "word": "반대",
+                "hanja": "反對"
+            },
+            {
+                "word": "반성",
+                "hanja": "反省"
+            },
+            {
+                "word": "위반",
+                "hanja": "違反"
+            }
+        ]
+    },
+    {
+        "id": 293,
+        "char": "味",
+        "meaning": "맛",
+        "examples": [
+            {
+                "word": "의미",
+                "hanja": "意味"
+            },
+            {
+                "word": "흥미",
+                "hanja": "興味"
+            },
+            {
+                "word": "취미",
+                "hanja": "趣味"
+            }
+        ]
+    },
+    {
+        "id": 294,
+        "char": "米",
+        "meaning": "쌀",
+        "examples": [
+            {
+                "word": "백미",
+                "hanja": "白米"
+            },
+            {
+                "word": "현미",
+                "hanja": "玄米"
+            },
+            {
+                "word": "정미",
+                "hanja": "精米"
+            }
+        ]
+    },
+    {
+        "id": 295,
+        "char": "美",
+        "meaning": "아름다울",
+        "examples": [
+            {
+                "word": "미술",
+                "hanja": "美術"
+            },
+            {
+                "word": "미인",
+                "hanja": "美人"
+            },
+            {
+                "word": "화려",
+                "hanja": "華麗"
+            }
+        ]
+    },
+    {
+        "id": 296,
+        "char": "未",
+        "meaning": "아닐",
+        "examples": [
+            {
+                "word": "미래",
+                "hanja": "未來"
+            },
+            {
+                "word": "미안",
+                "hanja": "未安"
+            },
+            {
+                "word": "미완성",
+                "hanja": "未完成"
+            }
+        ]
+    },
+    {
+        "id": 297,
+        "char": "民",
+        "meaning": "백성",
+        "examples": [
+            {
+                "word": "국민",
+                "hanja": "國民"
+            },
+            {
+                "word": "시민",
+                "hanja": "市民"
+            },
+            {
+                "word": "주민",
+                "hanja": "住民"
+            }
+        ]
+    },
+    {
+        "id": 298,
+        "char": "密",
+        "meaning": "빽빽할",
+        "examples": [
+            {
+                "word": "비밀",
+                "hanja": "秘密"
+            },
+            {
+                "word": "밀접",
+                "hanja": "密接"
+            },
+            {
+                "word": "정밀",
+                "hanja": "精密"
+            }
+        ]
+    },
+    {
+        "id": 299,
+        "char": "博",
+        "meaning": "넓을",
+        "examples": [
+            {
+                "word": "박사",
+                "hanja": "博士"
+            },
+            {
+                "word": "박물관",
+                "hanja": "博物館"
+            },
+            {
+                "word": "도박",
+                "hanja": "賭博"
+            }
+        ]
+    },
+    {
+        "id": 300,
+        "char": "朴",
+        "meaning": "성",
+        "examples": [
+            {
+                "word": "박씨",
+                "hanja": "朴氏"
+            },
+            {
+                "word": "순박",
+                "hanja": "淳朴"
+            }
+        ]
+    }
+]

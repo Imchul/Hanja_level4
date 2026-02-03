@@ -84,84 +84,60 @@ for (let i = 0; i < hanjaList.length; i++) {
     let matchedSound = "";
     let matched = false;
 
-    // Look ahead up to 3 tokens?
+    // Greedy match: Find the LAST token in the window that matches the sound
+    let bestK = -1;
+
     for (let k = 0; k < 4; k++) {
         if (tokenIdx + k >= hangulTokens.length) break;
-
         const token = hangulTokens[tokenIdx + k];
-        const lastChar = token.slice(-1);
+        // Standardize verification
+        // If sound is '가', token '가' matches. '집가' matches. '불가' matches.
+        if (token.endsWith(expectedSound)) {
+            bestK = k;
+        }
+    }
 
-        // Check match
-        // strict match: lastChar === expectedSound
-        // What if expectedSound is different? (e.g. 렬 vs 열)
-        // Initial sound rule apply?
-
-        let isMatch = (lastChar === expectedSound);
-
-        // Initial sound rule handling (heuristic)
-        if (!isMatch) {
-            // If expected '렬' but token ends '열'
-            // If expected '녀' but token ends '여'
-            // Simple mapping check?
-            // Or verify using hanja.isHanja(char)? No.
-
-            // Just trust the "End of token" logic if it's the 1st token?
-            // But we might have "옳을" (ul) then "가" (ga).
-            // "옳을" doesn't match "ga". "가" matches "ga".
+    if (bestK !== -1) {
+        // Use bestK
+        let combinedTokens = [];
+        for (let j = 0; j <= bestK; j++) {
+            combinedTokens.push(hangulTokens[tokenIdx + j]);
         }
 
-        if (isMatch) {
-            // Found it!
-            // Tokens from tokenIdx to tokenIdx+k are the definition.
-            // e.g. k=0: "집가" (ends in 가). meaning="집"
-            // e.g. k=1: "옳을" "가". meaning="옳을"
-
-            matchedSound = lastChar;
-
-            // Construct meaning
-            // If match is single token "집가" -> Meaning "집".
-            // If match is multiple "옳을" "가" -> Meaning "옳을".
-
-            // Special case: Single char "가" -> matched sound "가". Meaning is from previous tokens.
-
-            let combinedTokens = [];
-            for (let j = 0; j <= k; j++) {
-                combinedTokens.push(hangulTokens[tokenIdx + j]);
+        let fullString = combinedTokens.join(' ');
+        if (fullString.endsWith(expectedSound)) {
+            let meaningPart = fullString.slice(0, -expectedSound.length).trim();
+            // If meaning is empty, maybe the token WAS the meaning? (e.g. "각")
+            // "각각 각" -> meaning "각각".
+            // "각" -> meaning "".
+            // If empty, restore original or mark as "뜻확인"?
+            // Usually it means pure sound. But hanja list usually has meaning.
+            // If it's a "sound only" line (unlikely), we get empty.
+            if (meaningPart.length === 0 && fullString.length > expectedSound.length) {
+                // partial logic? No.
             }
+            if (meaningPart.length === 0) meaningPart = "뜻확인";
 
-            // Start processing combinedTokens to extract Meaning
-            // "집가" -> "집"
-            // "옳을", "가" -> "옳을"
-
-            let fullString = combinedTokens.join(' ');
-            if (fullString.endsWith(expectedSound)) {
-                // Remove the sound from the end
-                // "집가" -> "집"
-                // "옳을 가" -> "옳을 "
-                let meaningPart = fullString.slice(0, -1).trim();
-                results.push({
-                    id: i + 1,
-                    char: char,
-                    sound: expectedSound,
-                    meaning: meaningPart,
-                    level: '4급'
-                });
-            } else {
-                // Should not happen if lastChar === expectedSound
-                // Unless sound key length > 1? (Usually 1)
-                results.push({
-                    id: i + 1,
-                    char: char,
-                    sound: expectedSound,
-                    meaning: fullString, // fallback
-                    level: '4급'
-                });
-            }
-
-            tokenIdx += k + 1;
-            matched = true;
-            break;
+            results.push({
+                id: i + 1,
+                char: char,
+                sound: expectedSound,
+                meaning: meaningPart,
+                level: '4급'
+            });
+        } else {
+            // Should not happen if token ends with sound
+            results.push({
+                id: i + 1,
+                char: char,
+                sound: expectedSound,
+                meaning: fullString,
+                level: '4급'
+            });
         }
+
+        tokenIdx += bestK + 1;
+        matched = true;
     }
 
     if (!matched) {
@@ -175,9 +151,10 @@ for (let i = 0; i < hanjaList.length; i++) {
             id: i + 1,
             char: char,
             sound: expectedSound,
-            meaning: "??",
+            meaning: "뜻확인",
             level: '4급'
         });
+        tokenIdx++; // Skip one token to avoid stuck buffer
     }
 }
 
