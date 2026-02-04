@@ -179,6 +179,10 @@ export default function Play() {
                         <span className="value">{currentIdx + 1} / {questions.length}</span>
                     </div>
                 )}
+
+                <button className="nav-btn" onClick={() => navigate('/')} aria-label="그만하기">
+                    ✕
+                </button>
             </header>
 
             <main className="question-area">

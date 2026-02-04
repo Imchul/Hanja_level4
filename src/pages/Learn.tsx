@@ -83,6 +83,7 @@ export default function Learn() {
                     hideDetailsInitially={hideDetails}
                     isFavorite={favorites.includes(currentHanja.id)}
                     onToggleFavorite={() => toggleFavorite(currentHanja.id)}
+                    onNext={handleNext}
                 />
             </main>
 

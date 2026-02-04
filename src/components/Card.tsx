@@ -7,9 +7,10 @@ interface CardProps {
     hideDetailsInitially: boolean;
     isFavorite: boolean;
     onToggleFavorite: () => void;
+    onNext?: () => void;
 }
 
-export default function Card({ hanja, hideDetailsInitially, isFavorite, onToggleFavorite }: CardProps) {
+export default function Card({ hanja, hideDetailsInitially, isFavorite, onToggleFavorite, onNext }: CardProps) {
     const [revealed, setRevealed] = useState(!hideDetailsInitially);
 
     // Reset revealed state when hanja changes, if hideDetailsInitially is true
@@ -20,6 +21,8 @@ export default function Card({ hanja, hideDetailsInitially, isFavorite, onToggle
     const handleCardClick = () => {
         if (!revealed) {
             setRevealed(true);
+        } else if (onNext) {
+            onNext();
         }
     };
 
