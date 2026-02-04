@@ -47,8 +47,8 @@ export default function Card({ hanja, hideDetailsInitially, isFavorite, onToggle
 
             <div className={`card-details ${revealed ? 'visible' : ''}`}>
                 <div className="sound-meaning">
-                    <span className="sound">{hanja.sound}</span>
                     <span className="meaning">{hanja.meaning}</span>
+                    <span className="sound">{hanja.sound}</span>
                 </div>
 
                 <div className="examples">

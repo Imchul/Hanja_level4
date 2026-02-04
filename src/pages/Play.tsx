@@ -229,7 +229,7 @@ export default function Play() {
                             <div className="result-icon">{isCorrect ? '⭕ 정답!' : '❌ 땡!'}</div>
                             <div className="answer-reveal">
                                 <span className="big-char">{currentQ.hanja.char}</span>
-                                <span className="info">{currentQ.hanja.sound} [{currentQ.hanja.meaning}]</span>
+                                <span className="info">[{currentQ.hanja.meaning}] {currentQ.hanja.sound}</span>
                             </div>
                             <div className="examples-reveal">
                                 {currentQ.hanja.examples.map((ex, i) => (
